@@ -13,13 +13,4 @@ const client = new AkairoClient({
 }, {
     disableEveryone: true
 });
-/*dBots.nate.on('message', (m) => {
-	console.log(`${m.author}: ${m.content}`);
-});
-dBots.nate.channels.get('481626628750049300').fetchMessages().then(m => {
-        let msgs = m.array();
-        for (let i in msgs) {
-                console.log(`${msgs[i]}\n`);
-        }
-});*/
 client.login('gay');
