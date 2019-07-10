@@ -27,6 +27,7 @@ class EvalCommand extends Command {
             let embed = new RichEmbed()
                 .setTitle('`' + args.code + '`')
                 .addField('Output', '```js\n' + evaled + '\n```')
+                .setColor(this.client.embedColor)
                 .setTimestamp();
             m.util.send(embed);
         }

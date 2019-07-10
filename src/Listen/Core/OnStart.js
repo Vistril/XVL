@@ -13,9 +13,9 @@ class OnStartEvent extends Listener {
         const embed = new RichEmbed()
             .setTitle('Bot has restarted')
             .addField('Updates', updateText)
-            .setColor('#CD00CD')
+            .setColor(this.client.embedColor)
             .setFooter('Bot by onePurpose#8192');
-        this.client.channels.get('441346846045241358').send(embed);
+        this.client.channels.get('587124761881215006').send(embed);
     }
 }
 
