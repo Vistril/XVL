@@ -19,11 +19,13 @@ class GETPNGCommand extends Command {
         if (!selected) {
           const embed = new RichEmbed()
                 .setTitle('Profile picture of ' + m.author.tag)
+                .setColor(this.client.embedColor)
                 .setImage(m.author.avatarURL);
           m.util.send(embed);
 	} else {
           const embed = new RichEmbed()
                 .setTitle('Profile picture of ' + selected.user.tag)
+                .setColor(this.client.embedColor)
                 .setImage(selected.user.avatarURL);
 	        m.util.send(embed);
        }

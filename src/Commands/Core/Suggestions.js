@@ -22,7 +22,7 @@ class SuggestCommand extends Command {
         } else {
             let embed = new RichEmbed()
                 .setTitle('Suggestion Submitted')
-                .setColor('#CD00CD')
+                .setColor(this.client.embedColor)
                 .addField('"' + args.suggestion + '"', 'Thank you for your feedback.')
                 .setFooter('Requested by ' + m.author.username, this.client.users.get(m.author.id).avatarURL);
             m.channel.send(embed);

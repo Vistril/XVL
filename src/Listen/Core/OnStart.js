@@ -16,6 +16,7 @@ class OnStartEvent extends Listener {
             .setColor(this.client.embedColor)
             .setFooter('Bot by onePurpose#8192');
         this.client.channels.get('587124761881215006').send(embed);
+        require('fs').writeFileSync('./src/Listen/Util/time.txt', '10');
     }
 }
 

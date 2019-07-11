@@ -19,8 +19,16 @@ class SetAntiTime extends Command {
         if (m.member.roles.find(r => ['Moderators', 'Mods', 'Server Admin'].includes(r.name)) !== null || m.author.id == this.client.ownerID) {
             m.delete();
             if (!args.timeInDays) m.reply('Please input a number (time in days) to set as the AntiNew account check.');
-            fs.writeFileSync('./listen/Util/time.txt', args.timeInDays);
-            m.channel.send(':clock::white_check_mark: | Time (in days) set to: **' + args.timeInDays + '**');
+            if (args.timeInDays == 'off') { 
+                m.reply('**WARNING!** This will set the AntiNew account protection off. It will automatically reset once a member joins.')
+                fs.writeFileSync('./src/Listen/Util/time.txt', '0');
+                setTimeout(() => {
+                    fs.writeFileSync('./src/Listen/Util/time.txt', '10');
+                }, 300000);
+            } else {
+                fs.writeFileSync('./src/Listen/Util/time.txt', args.timeInDays);
+                m.channel.send(':clock::white_check_mark: | Time (in days) set to: **' + args.timeInDays + '**');
+            }
         } else {
             m.delete();
             m.reply(':no_entry: **No permissions**')
