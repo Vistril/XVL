@@ -13,4 +13,5 @@ const client = new AkairoClient({
 }, {
     disableEveryone: true
 });
+client.embedColor = '#f6b500'
 client.login('gay');
