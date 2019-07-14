@@ -10,9 +10,8 @@ class AntiNewListener extends Listener {
 
     exec(mem) {
         if (mem.guild.id != '441340010843602944') return;
-        let antiTime = parseInt(fs.readFileSync('./src/Listen/Util/time.txt')) * 86400000;
-        let memberTime = Date.now() - mem.user.createdAt;
-        if (antiTime * 1000 > memberTime) {
+        let anti = parseInt(require('fs').readFileSync('./src/Listen/Util/time.txt')) * 86400000 > (Date.now() - mem.user.createdAt)
+        if (anti) {
             this.client.channels.get('441346846045241358').send('Account kicked for being too new.');
             mem.kick()
         } else {

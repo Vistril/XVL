@@ -23,7 +23,6 @@ class SetAntiTime extends Command {
                 m.reply('**WARNING!** This will set the AntiNew account protection off. It will automatically reset once a member joins.')
                 fs.writeFileSync('./src/Listen/Util/time.txt', '0');
                 setTimeout(() => {
-                    //just in case
                     fs.writeFileSync('./src/Listen/Util/time.txt', '10');
                 }, 300000);
             } else {
